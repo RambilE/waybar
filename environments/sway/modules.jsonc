@@ -2,5 +2,14 @@
     "modules-left": [
         "sway/workspaces",
         "sway/window"
+    ],
+    "modules-right": [
+        "mpris",
+        "memory",
+        "cpu",
+        "wireplumber#sink",
+        "wireplumber#source",
+        "sway/language",
+        "tray"
     ]
 }

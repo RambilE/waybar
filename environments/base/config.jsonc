@@ -3,18 +3,6 @@
     "modules-center": [
         "clock"
     ],
-    "modules-right": [
-        "mpris",
-        "memory",
-        "cpu",
-        "wireplumber#sink",
-        "wireplumber#source",
-
-        // "power-profiles-daemon",
-        // "battery",
-
-        "tray"
-    ],
 
     "layer": "top",
     "height": 20,
