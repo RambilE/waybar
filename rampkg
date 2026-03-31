@@ -3,6 +3,9 @@ deplistPacman=(waybar jq)
 provides=(ramwaybar:$HOME/.local/bin/ramwaybar
 environments/sway/modules.jsonc:$HOME/.local/share/ramwaybar/environments/sway/modules.jsonc
 environments/base/config.jsonc:$HOME/.local/share/ramwaybar/environments/base/config.jsonc
+style/catppuccin-mocha/style.css:$HOME/.local/share/ramwaybar/style/catppuccin-mocha/style.css
+style/catppuccin-mocha/mocha.css:$HOME/.local/share/ramwaybar/style/catppuccin-mocha/mocha.css
+
 )
 # there is only sway rn because it's the only one that is properly made
 
