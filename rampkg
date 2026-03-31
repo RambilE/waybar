@@ -1,0 +1,10 @@
+deplistPacman=(waybar jq)
+
+provides=(ramwaybar:$HOME/.local/bin/ramwaybar
+environments/sway/modules.jsonc:$HOME/.local/share/ramwaybar/environments/sway/modules.jsonc
+)
+# there is only sway rn because it's the only one that is properly made
+
+SETUP() {
+:
+}

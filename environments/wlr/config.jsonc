@@ -1,0 +1,140 @@
+// -*- mode: jsonc -*-
+{
+    "layer": "top",
+    "height": 20,
+    "spacing": 4, // Gaps between modules (4px)
+    "reload_style_on_change": true,
+    "fixed-center": true,
+    // modules {{{
+    "modules-left": [
+        "ext/workspaces"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "mpris",
+        "memory",
+        "cpu",
+        "wireplumber#sink",
+        "wireplumber#source",
+
+        // "power-profiles-daemon",
+        // "battery",
+
+        "tray"
+    ],
+    // }}}
+
+    // modules cfg {{{
+
+    // workspaces {{{
+    "ext/workspaces": {
+        "format": "{id}",
+        "ignore-hidden": true,
+        "on-click": "activate",
+        "sort-by-id": true,
+    },
+    // }}}
+    "tray": {
+        "spacing": 10
+    },
+
+    "clock": {
+        "locale": "en_GB.UTF-8",
+        "format": "[ {:%H:%M @ %d %b, %Y} ]",
+        "format-alt": "[ {:%d.%m.%Y} ]",
+        "interval": 1, 
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode"          : "month",
+            "mode-mon-col"  : 3,
+            "weeks-pos"     : "right",
+            "on-scroll"     : 1,
+            "on-click-right": "mode",
+                "format": {
+                "months":     "<span color='#cdd6f4'><b>{}</b></span>",
+                "days":       "<span color='#cdd6f4'><b>{}</b></span>",
+                "weeks":      "<span color='#a6e3a1'><b>W{}</b></span>",
+                "weekdays":   "<span color='#f38ba8'><b>{}</b></span>",
+                "today":      "<span color='#f2cdcd'><b><u>{}</u></b></span>"
+                }
+        },
+        "actions": {
+            "on-click-right": "mode",
+            "on-click-forward": "tz_up",
+            "on-click-backward": "tz_down",
+            "on-scroll-up": "shift_up",
+            "on-scroll-down": "shift_down"
+        },
+    },
+
+    "memory": {
+        "format": "{used} GiB/{total} GiB",
+        "tooltip": false,
+        "interval": 5
+    },
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-full": "{capacity}%+ 󱐥",
+        "format-charging": "{capacity}% 󱐥",
+        "format-plugged": "{capacity}% 󱐥",
+        "format-alt": "{time} {icon}",
+        "format-icons": [" ", " ", " ", " ", " "],
+        "interval": 5,
+        "events": {
+            "on-discharging-warning": "pw-play --volume 0.3 /usr/share/sounds/ocean/stereo/battery-caution.oga",
+            "on-discharging-critical": "pw-play --volume 0.3 /usr/share/sounds/ocean/stereo/battery-low.oga"
+        }
+    },
+    "power-profiles-daemon": {
+      "format": "{icon}",
+      "tooltip-format": "Power profile: {profile}",
+      "tooltip": true,
+      "format-icons": {
+        "default": "󰓅",
+        "performance": "󰓅",
+        "balanced": "󰾅",
+        "power-saver": "󰾆"
+      }
+    },
+    "cpu": {
+	     "interval": 3,
+	     "format": " {usage:}%",
+    },
+    "wireplumber#sink": {
+       "format": "󰋎 {volume}%",
+       "format-muted": " {volume}%",
+       "tooltip-format": "{node_name}",
+       "scroll-step": 5,
+       "on-click-right": "~/.rambile/core/ramproc w",
+       "on-click": "~/.rambile/core/ramproc v m",
+       "on-scroll-up": "~/.rambile/core/ramproc v u",
+       "on-scroll-down": "~/.rambile/core/ramproc v d",
+    },
+    "wireplumber#source": {
+       "node-type": "Audio/Source",
+       "format": "",
+       "format-muted": "󰍭",
+       "tooltip-format": "{node_name} - {volume}%",
+       "scroll-step": 5,
+       "on-click-right": "~/.rambile/core/ramproc w",
+       "on-click": "~/.rambile/core/ramproc m m",
+       "on-scroll-up": "~/.rambile/core/ramproc m u",
+       "on-scroll-down": "~/.rambile/core/ramproc m d",
+    },
+    "mpris": {
+        "format": "{dynamic}",
+        "dynamic-order": ["artist", "title"],
+        "player": "naviterm",
+        "dynamic-len": 35,
+        "title-len": 35,
+        "artist-len": 30,
+    }
+}
+}
+}

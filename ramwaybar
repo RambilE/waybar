@@ -1,0 +1,55 @@
+#!/usr/bin/env bash
+
+set -eu
+
+enviro="$XDG_SESSION_DESKTOP"
+
+renameEnviro() { # $1 - name
+    local rn
+    case $enviro in
+        "Hyprland")
+            rn="hypr"
+        ;;
+        "scroll" | "Sway")
+            rn="sway"
+        ;;
+    esac
+
+    printf "$rn" # return renamed
+}
+
+# resdir=$(realpath $(dirname $0)) # used to be relative to script
+resdir="$HOME/.local/share/ramwaybar/"
+generic_name="$(renameEnviro $enviro)"
+enviro_dir="$resdir/environments"
+config_base="$enviro_dir/base/config.jsonc"
+modules_enviro="$enviro_dir/$generic_name/modules.jsonc"
+config_enviro="$resdir/config/$generic_name/config.jsonc"
+
+echo $(dirname $modules_enviro)
+
+if [[ -d $(dirname $modules_enviro) ]]; then # checks if there is modules for this environment
+    mkdir -p "$(dirname $config_enviro)"
+    jq -rs 'add' <(sed 's|//.*||g' $modules_enviro) <(sed 's|//.*||g' $config_base) > $config_enviro
+fi
+
+waybar -c $config_enviro -s $resdir/style/catppuccin-mocha/style.css
+
+# echo $config_base
+
+# config_rel="environmets/$generic_name/config.jsonc"
+#
+# if ! [[ -d $(config_full="$(realpath $config_rel)") ]]; then
+#     notify-send "waybar-script" "no config for this environment or smth"
+#     echo no config for this environment or smth
+# echo
+# fi
+
+# jq -s 'add' <(sed 's|//.*||g' modules-sway.jsonc) <(sed 's|//.*||g' config.jsonc)
+
+# if [[ $XDG_SESSION_DESKTOP == "Hyprland" ]]; then
+#     waybar -c ~/.rambile/waybar/hypr/config.jsonc -s ~/.rambile/waybar/style/catppuccin-mocha/style.css >/dev/null 2>&1 &
+# fi
+# if [[ $XDG_SESSION_DESKTOP == "Labwc" || $XDG_SESSION_DESKTOP == "Sway" ]]; then
+#     waybar -c ~/.rambile/waybar/wlr/config.jsonc -s ~/.rambile/waybar/style/catppuccin-mocha/style.css >/dev/null 2>&1 &
+# fi
