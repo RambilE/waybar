@@ -26,8 +26,6 @@ config_base="$enviro_dir/base/config.jsonc"
 modules_enviro="$enviro_dir/$generic_name/modules.jsonc"
 config_enviro="$resdir/config/$generic_name/config.jsonc"
 
-echo $(dirname $modules_enviro)
-
 if [[ -d $(dirname $modules_enviro) ]]; then # checks if there is modules for this environment
     mkdir -p "$(dirname $config_enviro)"
     jq -rs 'add' <(sed 's|//.*||g' $modules_enviro) <(sed 's|//.*||g' $config_base) > $config_enviro
