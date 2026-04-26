@@ -1,6 +1,7 @@
 deplistPacman=(waybar jq)
 
 provides=(ramwaybar:$HOME/.local/bin/ramwaybar
+scripts/weather:$HOME/.local/share/ramwaybar/scripts/weather
 environments/sway/modules.jsonc:$HOME/.local/share/ramwaybar/environments/sway/modules.jsonc
 environments/base/config.jsonc:$HOME/.local/share/ramwaybar/environments/base/config.jsonc
 style/catppuccin-mocha/style.css:$HOME/.local/share/ramwaybar/style/catppuccin-mocha/style.css
