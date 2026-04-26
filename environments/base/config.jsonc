@@ -126,7 +126,7 @@
         },
 
         "custom/weather": {
-            "exec": "curl https://wttr.in/?format=1",
+            "exec": "~/.local/share/ramwaybar/scripts/weather",
             "interval": "1800",
             "format": "{text}"
         },
