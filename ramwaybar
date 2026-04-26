@@ -28,7 +28,8 @@ config_enviro="$resdir/config/$generic_name/config.jsonc"
 
 if [[ -d $(dirname $modules_enviro) ]]; then # checks if there is modules for this environment
     mkdir -p "$(dirname $config_enviro)"
-    jq -rs 'add' <(sed 's|//.*||g' $modules_enviro) <(sed 's|//.*||g' $config_base) > $config_enviro
+    # jq -rs 'add' <(sed 's|//.*||g' $modules_enviro) <(sed 's|//.*||g' $config_base) > $config_enviro
+    jq -rs 'add' <(sed 's/^[[:space:]]*\/\/.*//g' $modules_enviro) <(sed 's/^[[:space:]]*\/\/.*//g' $config_base) > $config_enviro
 fi
 
 waybar -c $config_enviro -s $resdir/style/catppuccin-mocha/style.css
