@@ -127,7 +127,7 @@
 
         "custom/weather": {
             "exec": "curl https://wttr.in/?format=1",
-            "interval": "3600",
+            "interval": "1800",
             "format": "{text}"
         },
 

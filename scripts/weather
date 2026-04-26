@@ -1,2 +1,4 @@
 #!/usr/bin/env bash
-curl https://wttr.in/?format=1
+w="$(curl -q https://wttr.in/?format=1 2> /dev/null)"
+w=${w/ /}
+echo $w
