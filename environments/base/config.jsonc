@@ -123,11 +123,17 @@
             "dynamic-len": 35,
             "title-len": 35,
             "artist-len": 30
-        }
+        },
 
         "custom/weather": {
             "exec": "curl https://wttr.in/?format=1",
             "interval": "3600",
             "format": "{text}"
+        },
+
+        "custom/fih": {
+            "format": "",
+            "on-click": "notify-send \"Fish.\" \"       \"",
+            "on-click-right": "footclient fish"
         }
     }

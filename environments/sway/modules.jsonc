@@ -10,6 +10,7 @@
         "wireplumber#sink",
         "wireplumber#source",
         "sway/language",
+        "custom/fih",
         "tray"
     ]
 }
