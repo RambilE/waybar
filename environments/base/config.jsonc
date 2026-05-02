@@ -127,7 +127,7 @@
 
         "custom/weather": {
             "exec": "~/.local/share/ramwaybar/scripts/weather",
-            "interval": "1800",
+            "interval": 1800,
             "format": "{text}"
         },
 
