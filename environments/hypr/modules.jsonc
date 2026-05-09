@@ -1,0 +1,16 @@
+{
+    "modules-left": [
+        "hyprland/workspaces",
+        "hyprland/window"
+    ],
+    "modules-right": [
+        "custom/weather",
+        "memory",
+        "cpu",
+        "wireplumber#sink",
+        "wireplumber#source",
+        "hyprland/language",
+        "custom/fih",
+        "tray"
+    ]
+}
