@@ -116,6 +116,16 @@
             "on-scroll-down": "~/.rambile/core/ramproc m d"
         },
 
+        "hyprland/language": {
+            "format-en": "en",
+            "format-ru": "ru"
+        },
+
+        "niri/language": {
+            "format-en": "en",
+            "format-ru": "ru"
+        },
+
         "mpris": {
             "format": "{dynamic}",
             "dynamic-order": ["artist", "title"],
