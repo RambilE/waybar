@@ -19,8 +19,8 @@
             "sort-by-id": true
         },
         "hyprland/workspaces" : {
-            "on-scroll-up": "hyprctl dispatch \"hl.dsp.focus({ workspace = \"e-1\" })\""
-            "on-scroll-down": "hyprctl dispatch \"hl.dsp.focus({ workspace = \"e+1\" })\""
+            "on-scroll-up": "~/.local/share/ramwaybar/scripts/hyprworkspaceup",
+            "on-scroll-down": "~/.local/share/ramwaybar/scripts/hyprworkspacedown"
         },
 
         "tray": {
