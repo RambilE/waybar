@@ -1,1 +1,1 @@
-hyprctl dispatch "hl.dsp.focus({ workspace = "e-1" })"
+hyprctl dispatch 'hl.dsp.focus({ workspace = "e-1" })'
