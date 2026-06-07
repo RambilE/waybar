@@ -13,13 +13,19 @@ renameEnviro() { # $1 - name
         "scroll" | "Sway")
             rn="sway"
         ;;
+        "niri")
+            rn="niri"
+        ;;
+        *)
+            notify-send "Unknown environment"
+            exit 1
+        ;;
     esac
 
     printf "$rn" # return renamed
 }
 
-# resdir=$(realpath $(dirname $0)) # used to be relative to script
-resdir="$HOME/.local/share/ramwaybar/"
+resdir="$HOME/.local/share/ramwaybar"
 generic_name="$(renameEnviro $enviro)"
 enviro_dir="$resdir/environments"
 config_base="$enviro_dir/base/config.jsonc"
@@ -32,22 +38,3 @@ if [[ -d $(dirname $modules_enviro) ]]; then # checks if there is modules for th
 fi
 
 waybar -c $config_enviro -s $resdir/style/catppuccin-mocha/style.css
-
-# echo $config_base
-
-# config_rel="environmets/$generic_name/config.jsonc"
-#
-# if ! [[ -d $(config_full="$(realpath $config_rel)") ]]; then
-#     notify-send "waybar-script" "no config for this environment or smth"
-#     echo no config for this environment or smth
-# echo
-# fi
-
-# jq -s 'add' <(sed 's|//.*||g' modules-sway.jsonc) <(sed 's|//.*||g' config.jsonc)
-
-# if [[ $XDG_SESSION_DESKTOP == "Hyprland" ]]; then
-#     waybar -c ~/.rambile/waybar/hypr/config.jsonc -s ~/.rambile/waybar/style/catppuccin-mocha/style.css >/dev/null 2>&1 &
-# fi
-# if [[ $XDG_SESSION_DESKTOP == "Labwc" || $XDG_SESSION_DESKTOP == "Sway" ]]; then
-#     waybar -c ~/.rambile/waybar/wlr/config.jsonc -s ~/.rambile/waybar/style/catppuccin-mocha/style.css >/dev/null 2>&1 &
-# fi
