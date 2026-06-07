@@ -37,4 +37,4 @@ if [[ -d $(dirname $modules_enviro) ]]; then # checks if there is modules for th
     jq -rs 'add' <(sed 's|//.*||g' $modules_enviro) <(sed 's|//.*||g' $config_base) > $config_enviro
 fi
 
-waybar -c $config_enviro -s $resdir/style/catppuccin-mocha/style.css
+waybar -c $config_enviro -s $resdir/style/catppuccin-mocha/style.css &
