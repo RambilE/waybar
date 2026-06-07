@@ -18,14 +18,16 @@
             "on-click": "activate",
             "sort-by-id": true
         },
+
         "hyprland/workspaces": {
             "on-scroll-up": "~/.local/share/ramwaybar/scripts/hyprworkspaceup",
             "on-scroll-down": "~/.local/share/ramwaybar/scripts/hyprworkspacedown"
         },
+
         "niri/workspaces": {
             "on-scroll-up": "niri msg action focus-workspace-up",
             "on-scroll-down": "niri msg action focus-workspace-down"
-        }
+        },
 
         "tray": {
             "spacing": 10
