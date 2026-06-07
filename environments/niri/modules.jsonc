@@ -9,7 +9,7 @@
         "cpu",
         "wireplumber#sink",
         "wireplumber#source",
-        "hyprland/language",
+        "niri/language",
         "custom/fih",
         "tray"
     ]
