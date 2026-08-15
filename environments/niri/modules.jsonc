@@ -1,6 +1,7 @@
 {
     "modules-left": [
         "niri/workspaces",
+        "cffi/niri-windows",
         "niri/window"
     ],
     "modules-right": [
@@ -12,5 +13,22 @@
         "niri/language",
         "custom/fih",
         "tray"
-    ]
+    ],
+
+    "cffi/niri-windows": {
+        "module_path": "/home/rambile/.local/share/ramwaybar/modules/waybar-niri-windows.so",
+        "options": {
+          "mode": "graphical",
+          "show-floating": "auto",
+          "floating-position": "right",
+          "minimum-size": 1,
+          "spacing": 2,
+          "icon-minimum-size": 10,
+          "column-borders": 4, // border on .column
+          "floating-borders": 4, // border on .floating
+          "on-tile-click": "FocusWindow", // (default: FocusWindow)
+          "on-tile-middle-click": "CloseWindow", // (default: CloseWindow)
+          "on-tile-right-click": "" // (default: none)
+        }
+    }
 }
