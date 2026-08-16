@@ -33,7 +33,7 @@ window#waybar {
 
 .cffi-niri-windows .floating .tile {
     border-radius: 0px;
-    background-color: surface0;
+    background-color: @surface0;
     box-shadow: inset 0px 2px  @surface1,
                 inset 0px -2px @surface1,
                 inset -2px 0px @surface1,
@@ -41,7 +41,7 @@ window#waybar {
 }
 
 .cffi-niri-windows .floating .tile:active {
-    background-color: surface1;
+    background-color: @surface1;
     box-shadow: inset 0px 2px  @flamingo,
                 inset 0px -2px @flamingo,
                 inset -2px 0px @flamingo,
