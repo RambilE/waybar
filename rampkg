@@ -4,13 +4,16 @@ provides=(ramwaybar:$HOME/.local/bin/ramwaybar
 scripts/weather:$HOME/.local/share/ramwaybar/scripts/weather
 scripts/hyprworkspaceup:$HOME/.local/share/ramwaybar/scripts/hyprworkspaceup
 scripts/hyprworkspacedown:$HOME/.local/share/ramwaybar/scripts/hyprworkspacedown
+
+modules/waybar-niri-windows.so:$HOME/.local/share/ramwaybar/modules/waybar-niri-windows.so
+
 environments/sway/modules.jsonc:$HOME/.local/share/ramwaybar/environments/sway/modules.jsonc
 environments/hypr/modules.jsonc:$HOME/.local/share/ramwaybar/environments/hypr/modules.jsonc
 environments/niri/modules.jsonc:$HOME/.local/share/ramwaybar/environments/niri/modules.jsonc
 environments/base/config.jsonc:$HOME/.local/share/ramwaybar/environments/base/config.jsonc
+
 style/catppuccin-mocha/style.css:$HOME/.local/share/ramwaybar/style/catppuccin-mocha/style.css
 style/catppuccin-mocha/mocha.css:$HOME/.local/share/ramwaybar/style/catppuccin-mocha/mocha.css
-
 )
 
 SETUP() {
